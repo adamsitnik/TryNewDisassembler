@@ -16,7 +16,7 @@ namespace TryNewDisassembler
             => DefaultConfig.Instance
                 .AddJob(
                     Job.Dry // Dry job runs the benchmark just once
-                       .WithEnvironmentVariable("COMPlus_TieredCompilation", "0") // When using Tiered JIT the ClrMD reports addresses of Tier 0 method, not Tier 1 https://github.com/dotnet/BenchmarkDotNet/issues/899
+                       .WithEnvironmentVariable("COMPlus_TieredCompilation", "0") // we run the benchmark just once and we want to see fully optimized code
                        .AsDefault())
                 .AddDiagnoser(
                     new DisassemblyDiagnoser(
