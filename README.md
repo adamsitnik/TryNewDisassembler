@@ -5,7 +5,12 @@ This small repo is a sample app configured to use the latest BenchmarkDotNet dis
 How to run it:
 
 ```cmd
-dotnet run -c Release --filter '*'
+dotnet run -c Release -f netcoreapp3.0 --filter '*'
+```
+How to compare .NET vs Core:
+
+```cmd
+dotnet run -c Release -f netcoreapp3.0 --filter '*' --runtimes net461 netcoreapp3.0
 ```
 
 After running the command the exporter exports GitHub Markdown files to `.\BenchmarkDotNet.Artifacts\results\*-asm.md`
