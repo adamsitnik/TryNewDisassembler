@@ -32,7 +32,7 @@ module TailCall =
     open BenchmarkDotNet.Running
     open BenchmarkDotNet.Diagnostics.Windows.Configs
 
-    [<TailCallDiagnoser>]
+    [<TailCallDiagnoser(logFailuresOnly = false, filterByNamespace = false)>]
     [<DisassemblyDiagnoser>]
     type Benchmarks () =
       [<Params (10000, 1000, 100)>] 
